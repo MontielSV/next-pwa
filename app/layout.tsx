@@ -2,12 +2,19 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link"; // Importamos Link para navegación rápida
+import SWRegistration from "./SWRegistration";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "Gas-Tomar & Co.",
-  description: "Optimización etílica y control",
+export const metadata = {
+  title: "Parchis-Star",
+  description: "Optimiza tu bolsillo y tu sobriedad",
+  manifest: "/manifest.json", // <--- ESTO ES LO IMPORTANTE
+  themeColor: "#ff0000",
+  viewport: "width=device-width, initial-scale=1, maximum-scale=1",
+  icons: {
+    apple: "https://cdn-icons-png.flaticon.com/512/189/189253.png",
+  },
 };
 
 export default function RootLayout({
