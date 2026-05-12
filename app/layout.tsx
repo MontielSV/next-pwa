@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Link from "next/link"; // Importamos Link para navegación rápida
-import SWRegistration from "./SWRegistration";
+import Link from "next/link"; 
+import SWRegistration from "./SWRegistration"; // 1. Importación lista
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Parchis-Star",
   description: "Optimiza tu bolsillo y tu sobriedad",
-  manifest: "/manifest.json", // <--- ESTO ES LO IMPORTANTE
+  manifest: "/manifest.json", 
   themeColor: "#ff0000",
   viewport: "width=device-width, initial-scale=1, maximum-scale=1",
   icons: {
@@ -54,10 +54,15 @@ export default function RootLayout({
           </div>
         </nav>
 
-        {/* El contenido de las páginas (page.tsx) se renderiza aquí */}
+        {/* El contenido de las páginas */}
         <div className="pb-24"> 
           {children}
         </div>
+
+        {/* 2. INTEGRACIÓN DEL REGISTRO PWA */}
+        {/* Se pone aquí para que se ejecute en todas las páginas del sitio */}
+        <SWRegistration /> 
+
       </body>
     </html>
   );
