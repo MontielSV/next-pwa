@@ -1,0 +1,237 @@
+/* --- RESET Y FUENTES --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { 
+  background-color: #080808; 
+  color: white; 
+  font-family: 'system-ui', sans-serif;
+  overflow-x: hidden;
+}
+
+/* --- NAVBAR ARREGLADO --- */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 100;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+}
+
+nav div {
+  display: flex;
+  gap: 20px;
+  background: rgba(20, 20, 20, 0.6);
+  backdrop-filter: blur(15px);
+  padding: 12px 25px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+nav a {
+  text-decoration: none;
+  color: #888;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+nav a:hover { color: #facc15; text-shadow: 0 0 10px #facc15; }
+
+/* --- CONTENEDOR PRINCIPAL --- */
+.main-container {
+  padding-top: 100px; /* Un poco más de espacio para móviles */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.content-wrapper { width: 100%; max-width: 600px; padding: 20px; }
+
+/* --- LOGO PARCHIS --- */
+.logo {
+  font-size: clamp(2.5rem, 10vw, 4rem); /* Tamaño fluido */
+  font-weight: 900;
+  font-style: italic;
+  text-align: center;
+  color: #facc15;
+  text-shadow: 0 0 20px rgba(250, 204, 21, 0.8), 0 0 40px rgba(250, 204, 21, 0.4);
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #aaa;
+  font-size: 0.8rem;
+  letter-spacing: 5px;
+  margin-bottom: 40px;
+}
+
+/* --- CARD DE ENTRADA --- */
+.input-card {
+  background: #111;
+  padding: 30px;
+  border-radius: 30px;
+  border: 2px solid #00f2ff;
+  box-shadow: 0 0 20px rgba(0, 242, 255, 0.1);
+  margin-bottom: 30px;
+}
+
+.label { color: #facc15; font-size: 0.7rem; font-weight: bold; margin-bottom: 15px; display: block; }
+
+.input-group {
+  display: flex;
+  background: #000;
+  border-radius: 18px;
+  padding: 5px;
+  border: 1px solid #333;
+  align-items: center;
+}
+
+input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 15px;
+  color: white;
+  font-size: 1.2rem;
+  outline: none;
+  min-width: 0;
+}
+
+button {
+  background: #facc15;
+  color: black;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 15px;
+  font-weight: 900;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 0 15px rgba(250, 204, 21, 0.4);
+  transition: 0.3s;
+}
+
+button:hover { transform: scale(1.05); box-shadow: 0 0 25px #facc15; }
+
+/* --- RESULTADOS --- */
+.results-grid { display: grid; gap: 20px; }
+
+.result-item {
+  background: #151515;
+  padding: 20px;
+  border-radius: 25px;
+  border: 2px solid #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.result-item:nth-child(2n) { border-color: #bc13fe; box-shadow: 0 0 15px rgba(188, 19, 254, 0.1); }
+.result-item:nth-child(3n) { border-color: #00f2ff; box-shadow: 0 0 15px rgba(0, 242, 255, 0.1); }
+
+.best-choice {
+  border-color: #facc15 !important;
+  background: rgba(250, 204, 21, 0.05);
+  position: relative;
+  box-shadow: 0 0 25px rgba(250, 204, 21, 0.2) !important;
+}
+
+.best-choice::before {
+  content: "MEJOR OPCIÓN";
+  position: absolute;
+  top: -12px;
+  right: 25px;
+  background: #facc15;
+  color: black;
+  font-size: 0.6rem;
+  font-weight: 900;
+  padding: 3px 12px;
+  border-radius: 10px;
+}
+
+.stats-value {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #00f2ff;
+  text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+}
+
+.best-choice .stats-value { color: #facc15; text-shadow: 0 0 10px #facc15; }
+
+/* --- SOBRIEDAD --- */
+.sobriedad-container {
+  padding-top: 100px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: radial-gradient(circle at top, #001d3d 0%, #080808 100%);
+}
+
+.sobriedad-card {
+  background: #111;
+  padding: 30px;
+  border-radius: 30px;
+  border: 2px solid #00f2ff;
+  box-shadow: 0 0 25px rgba(0, 242, 255, 0.1);
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-field { display: flex; flex-direction: column; gap: 8px; }
+
+.input-field input {
+  width: 100%;
+  border: 1px solid #333;
+  background: #000;
+  color: #00f2ff;
+  border-radius: 12px;
+}
+
+.btn-juez { background: #00f2ff !important; color: #000 !important; margin-top: 10px; }
+
+.bac-value { font-size: clamp(3rem, 15vw, 5rem); font-weight: 900; }
+
+/* ==========================================================
+   AGREGADO: SECCIÓN RESPONSIVE (MEDIA QUERIES)
+   ========================================================== */
+
+@media (max-width: 480px) {
+  /* Navbar más compacto */
+  nav div { gap: 10px; padding: 10px 15px; width: 90%; }
+  nav a { font-size: 0.6rem; }
+
+  /* Logo y textos más pequeños */
+  .subtitle { font-size: 0.6rem; letter-spacing: 2px; }
+  
+  /* Inputs se apilan si es necesario */
+  .input-group { flex-direction: column; background: transparent; border: none; gap: 10px; }
+  input { background: #000; border: 1px solid #333; border-radius: 15px; width: 100%; text-align: center; }
+  button { width: 100%; padding: 18px; }
+
+  /* Items de resultado se apilan para mejor lectura */
+  .result-item { flex-direction: column; text-align: center; padding: 25px; }
+  .item-info { margin-bottom: 10px; }
+  
+  /* Ajuste de Sobriedad */
+  .sobriedad-card { padding: 20px; }
+  .bac-value { font-size: 3.5rem; }
+}
+
+/* Ocultar flechas de input number para estética limpia */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
